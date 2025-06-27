@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -210,10 +209,10 @@ const TestApplication = () => {
       <div className="min-h-screen bg-warm-100 flex items-center justify-center p-4">
         <div className="max-w-2xl w-full text-center animate-fade-in">
           <div className="mb-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-sage-400 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-600 rounded-full mb-6">
               <FileText className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-4xl font-bold text-sage-700 mb-4">Test Application</h1>
+            <h1 className="text-4xl font-bold text-amber-800 mb-4">Test Application</h1>
             <p className="text-lg text-warm-700 max-w-md mx-auto">
               Take tests and quizzes with our modern, user-friendly interface. 
               Track your progress and get detailed feedback on your performance.
@@ -224,7 +223,7 @@ const TestApplication = () => {
             <Button 
               onClick={() => setShowSetupDialog(true)}
               size="lg"
-              className="bg-sage-400 hover:bg-sage-500 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all animate-scale-in"
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all animate-scale-in"
             >
               <Settings className="w-5 h-5 mr-2" />
               Start Test
@@ -240,15 +239,15 @@ const TestApplication = () => {
         <Dialog open={showSetupDialog} onOpenChange={setShowSetupDialog}>
           <DialogContent className="max-w-md max-h-[80vh] bg-warm-50">
             <DialogHeader>
-              <DialogTitle className="text-sage-700">Test Setup</DialogTitle>
+              <DialogTitle className="text-amber-800">Test Setup</DialogTitle>
             </DialogHeader>
             
             <ScrollArea className="max-h-[60vh] pr-4">
               <div className="space-y-6">
                 {/* File Upload Section */}
                 <div className="space-y-3">
-                  <Label className="text-sage-700 font-medium">Test File</Label>
-                  <div className="border-2 border-dashed border-warm-300 rounded-lg p-6 text-center hover:border-sage-300 transition-colors">
+                  <Label className="text-amber-800 font-medium">Test File</Label>
+                  <div className="border-2 border-dashed border-amber-300 rounded-lg p-6 text-center hover:border-amber-300 transition-colors">
                     <input
                       ref={fileInputRef}
                       type="file"
@@ -258,8 +257,8 @@ const TestApplication = () => {
                       id="file-upload"
                     />
                     <label htmlFor="file-upload" className="cursor-pointer">
-                      <Upload className="w-8 h-8 text-warm-500 mx-auto mb-2" />
-                      <p className="text-warm-600">Click to upload JSON file</p>
+                      <Upload className="w-8 h-8 text-amber-500 mx-auto mb-2" />
+                      <p className="text-amber-600">Click to upload JSON file</p>
                     </label>
                   </div>
                   
@@ -278,7 +277,7 @@ const TestApplication = () => {
                     {/* Configuration Options */}
                     <div className="space-y-4">
                       <div>
-                        <Label htmlFor="numQuestions" className="text-sage-700 font-medium">
+                        <Label htmlFor="numQuestions" className="text-amber-800 font-medium">
                           Number of Questions
                         </Label>
                         <Input
@@ -296,7 +295,7 @@ const TestApplication = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="startFrom" className="text-sage-700 font-medium">
+                        <Label htmlFor="startFrom" className="text-amber-800 font-medium">
                           Start from Question
                         </Label>
                         <Input
@@ -322,9 +321,9 @@ const TestApplication = () => {
                             ...testConfig,
                             randomize: e.target.checked
                           })}
-                          className="rounded border-warm-300 text-sage-400 focus:ring-sage-400"
+                          className="rounded border-amber-300 text-amber-400 focus:ring-amber-400"
                         />
-                        <Label htmlFor="randomize" className="text-sage-700">
+                        <Label htmlFor="randomize" className="text-amber-800">
                           Randomize Questions
                         </Label>
                       </div>
@@ -338,14 +337,14 @@ const TestApplication = () => {
               <Button
                 variant="outline"
                 onClick={() => setShowSetupDialog(false)}
-                className="flex-1"
+                className="flex-1 border-amber-600 text-amber-700 hover:bg-amber-50"
               >
                 Cancel
               </Button>
               <Button
                 onClick={startTest}
                 disabled={!testData}
-                className="flex-1 bg-sage-400 hover:bg-sage-500"
+                className="flex-1 bg-amber-600 hover:bg-amber-700"
               >
                 Begin Test
               </Button>
@@ -367,23 +366,23 @@ const TestApplication = () => {
           {/* Header */}
           <div className="bg-warm-50 rounded-lg p-4 mb-6 shadow-sm">
             <div className="flex items-center justify-between mb-4">
-              <h1 className="text-xl font-bold text-sage-700">{testData?.title}</h1>
-              <div className="flex items-center gap-4 text-sage-600">
+              <h1 className="text-xl font-bold text-amber-800">{testData?.title}</h1>
+              <div className="flex items-center gap-4 text-amber-700">
                 <div className="flex items-center gap-1">
                   <Clock className="w-4 h-4" />
                   <span>{formatTime(elapsedTime)}</span>
                 </div>
-                <Badge variant="outline" className="border-sage-300">
+                <Badge variant="outline" className="border-amber-600 text-amber-700">
                   {currentQuestionIndex + 1} of {testQuestions.length}
                 </Badge>
               </div>
             </div>
             
-            {/* Progress Bar */}
+            {/* Progress Bar - Fixed to show answered questions percentage */}
             <div className="w-full bg-warm-200 rounded-full h-2">
               <div 
-                className="bg-sage-400 h-2 rounded-full transition-all duration-300"
-                style={{ width: `${((currentQuestionIndex + 1) / testQuestions.length) * 100}%` }}
+                className="bg-amber-600 h-2 rounded-full transition-all duration-300"
+                style={{ width: `${(userAnswers.length / testQuestions.length) * 100}%` }}
               />
             </div>
           </div>
@@ -393,7 +392,7 @@ const TestApplication = () => {
             <div className="lg:col-span-3">
               <Card className="test-card">
                 <CardHeader>
-                  <CardTitle className="text-sage-700">
+                  <CardTitle className="text-amber-800">
                     Question {currentQuestionIndex + 1}
                   </CardTitle>
                 </CardHeader>
@@ -414,7 +413,7 @@ const TestApplication = () => {
                         <div className="flex items-center gap-3">
                           <div className={`w-4 h-4 rounded-full border-2 ${
                             selectedOption === index 
-                              ? 'border-sage-400 bg-sage-400' 
+                              ? 'border-amber-600 bg-amber-600' 
                               : 'border-warm-400'
                           }`}>
                             {selectedOption === index && (
@@ -432,6 +431,7 @@ const TestApplication = () => {
                       variant="outline"
                       onClick={() => goToQuestion(Math.max(0, currentQuestionIndex - 1))}
                       disabled={currentQuestionIndex === 0}
+                      className="border-amber-600 text-amber-700 hover:bg-amber-50"
                     >
                       <ArrowLeft className="w-4 h-4 mr-1" />
                       Previous
@@ -440,7 +440,7 @@ const TestApplication = () => {
                     <Button
                       onClick={confirmAnswer}
                       disabled={selectedOption === null}
-                      className="bg-sage-400 hover:bg-sage-500 flex-1"
+                      className="bg-amber-600 hover:bg-amber-700 flex-1"
                     >
                       {hasAnswered ? 'Update Answer' : 'Confirm Answer'}
                     </Button>
@@ -449,6 +449,7 @@ const TestApplication = () => {
                       variant="outline"
                       onClick={() => goToQuestion(Math.min(testQuestions.length - 1, currentQuestionIndex + 1))}
                       disabled={currentQuestionIndex === testQuestions.length - 1}
+                      className="border-amber-600 text-amber-700 hover:bg-amber-50"
                     >
                       Next
                       <ArrowRight className="w-4 h-4 ml-1" />
@@ -462,7 +463,7 @@ const TestApplication = () => {
             <div className="lg:col-span-1">
               <Card className="test-card">
                 <CardHeader>
-                  <CardTitle className="text-sage-700 text-sm">Question Navigation</CardTitle>
+                  <CardTitle className="text-amber-800 text-sm">Question Navigation</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-64">
@@ -479,10 +480,10 @@ const TestApplication = () => {
                             onClick={() => goToQuestion(index)}
                             className={`relative ${
                               isCurrent 
-                                ? 'bg-sage-400 hover:bg-sage-500' 
+                                ? 'bg-amber-600 hover:bg-amber-700' 
                                 : isAnswered 
                                   ? 'border-success-500 text-success-600 hover:bg-success-50'
-                                  : ''
+                                  : 'border-amber-600 text-amber-700 hover:bg-amber-50'
                             }`}
                           >
                             {index + 1}
@@ -502,7 +503,7 @@ const TestApplication = () => {
                         onClick={finishTest}
                         variant="outline"
                         size="sm"
-                        className="w-full mt-2 border-sage-400 text-sage-600 hover:bg-sage-50"
+                        className="w-full mt-2 border-amber-600 text-amber-700 hover:bg-amber-50"
                       >
                         Finish Test
                       </Button>
@@ -531,15 +532,16 @@ const TestApplication = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-warm-50 rounded-lg p-4 mb-6 shadow-sm">
               <div className="flex items-center justify-between">
-                <h1 className="text-xl font-bold text-sage-700">Review Mode</h1>
+                <h1 className="text-xl font-bold text-amber-800">Review Mode</h1>
                 <div className="flex gap-2">
                   <Button
                     variant="outline"
                     onClick={() => setReviewMode(false)}
+                    className="border-amber-600 text-amber-700 hover:bg-amber-50"
                   >
                     Back to Results
                   </Button>
-                  <Badge variant="outline" className="border-sage-300">
+                  <Badge variant="outline" className="border-amber-600 text-amber-700">
                     {currentQuestionIndex + 1} of {testQuestions.length}
                   </Badge>
                 </div>
@@ -548,7 +550,7 @@ const TestApplication = () => {
 
             <Card className="test-card">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-sage-700">
+                <CardTitle className="flex items-center gap-2 text-amber-800">
                   Question {currentQuestionIndex + 1}
                   {userAnswer?.isCorrect ? (
                     <CheckCircle className="w-5 h-5 text-success-500" />
@@ -604,6 +606,7 @@ const TestApplication = () => {
                     variant="outline"
                     onClick={() => goToQuestion(Math.max(0, currentQuestionIndex - 1))}
                     disabled={currentQuestionIndex === 0}
+                    className="border-amber-600 text-amber-700 hover:bg-amber-50"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1" />
                     Previous
@@ -613,7 +616,7 @@ const TestApplication = () => {
                     variant="outline"
                     onClick={() => goToQuestion(Math.min(testQuestions.length - 1, currentQuestionIndex + 1))}
                     disabled={currentQuestionIndex === testQuestions.length - 1}
-                    className="flex-1"
+                    className="flex-1 border-amber-600 text-amber-700 hover:bg-amber-50"
                   >
                     Next
                     <ArrowRight className="w-4 h-4 ml-1" />
@@ -639,14 +642,14 @@ const TestApplication = () => {
                 <XCircle className="w-10 h-10 text-white" />
               )}
             </div>
-            <h1 className="text-3xl font-bold text-sage-700 mb-2">Test Complete!</h1>
+            <h1 className="text-3xl font-bold text-amber-800 mb-2">Test Complete!</h1>
             <p className="text-warm-600">Here are your results</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <Card className="test-card text-center">
               <CardContent className="pt-6">
-                <div className="text-2xl font-bold text-sage-600 mb-1">
+                <div className="text-2xl font-bold text-amber-600 mb-1">
                   {results.correctAnswers}/{results.totalQuestions}
                 </div>
                 <p className="text-sm text-warm-600">Correct Answers</p>
@@ -655,7 +658,7 @@ const TestApplication = () => {
 
             <Card className="test-card text-center">
               <CardContent className="pt-6">
-                <div className="text-2xl font-bold text-sage-600 mb-1">
+                <div className="text-2xl font-bold text-amber-600 mb-1">
                   {results.percentage}%
                 </div>
                 <p className="text-sm text-warm-600">Score</p>
@@ -664,7 +667,7 @@ const TestApplication = () => {
 
             <Card className="test-card text-center">
               <CardContent className="pt-6">
-                <div className="text-2xl font-bold text-sage-600 mb-1">
+                <div className="text-2xl font-bold text-amber-600 mb-1">
                   {formatTime(testDuration)}
                 </div>
                 <p className="text-sm text-warm-600">Time Taken</p>
@@ -687,13 +690,13 @@ const TestApplication = () => {
             <Button
               onClick={() => setReviewMode(true)}
               variant="outline"
-              className="border-sage-400 text-sage-600 hover:bg-sage-50"
+              className="border-amber-600 text-amber-700 hover:bg-amber-50"
             >
               Review Answers
             </Button>
             <Button
               onClick={resetTest}
-              className="bg-sage-400 hover:bg-sage-500"
+              className="bg-amber-600 hover:bg-amber-700"
             >
               <RotateCcw className="w-4 h-4 mr-2" />
               New Test

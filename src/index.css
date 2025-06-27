@@ -16,10 +16,10 @@
     --popover: 253 252 250;
     --popover-foreground: 58 58 58;
 
-    --primary: 109 139 116; /* sage-400 */
+    --primary: 139 102 66; /* Updated to brown-golden */
     --primary-foreground: 255 255 255;
 
-    --secondary: 208 201 192; /* warm-300 */
+    --secondary: 160 146 108; /* Updated to brown-golden secondary */
     --secondary-foreground: 58 58 58;
 
     --muted: 229 224 211; /* warm-200 */
@@ -31,9 +31,9 @@
     --destructive: 239 68 68; /* error-500 */
     --destructive-foreground: 255 255 255;
 
-    --border: 208 201 192; /* warm-300 */
-    --input: 229 224 211; /* warm-200 */
-    --ring: 109 139 116; /* sage-400 */
+    --border: 139 102 66; /* Updated to brown-golden */
+    --input: 245 240 230; /* Updated to light brown-golden */
+    --ring: 139 102 66; /* Updated to brown-golden */
 
     --radius: 0.75rem;
   }
@@ -69,10 +69,10 @@
   }
   
   .answer-selected {
-    @apply border-sage-400 bg-sage-50;
+    @apply border-amber-600 bg-amber-50; /* Updated to golden brown */
   }
   
   .answer-unselected {
-    @apply border-warm-300 bg-warm-50 hover:border-sage-300 hover:bg-sage-50;
+    @apply border-warm-300 bg-warm-50 hover:border-amber-500 hover:bg-amber-50; /* Updated hover states */
   }
 }
