@@ -1,0 +1,112 @@
+
+{
+  "title": "General Knowledge Quiz",
+  "description": "A sample quiz covering various topics including science, history, and literature.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the capital of France?",
+      "options": ["London", "Berlin", "Paris", "Madrid"],
+      "correct": 2,
+      "explanation": "Paris is the capital and most populous city of France."
+    },
+    {
+      "id": 2,
+      "question": "Which planet is known as the Red Planet?",
+      "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correct": 1,
+      "explanation": "Mars is called the Red Planet due to its reddish appearance caused by iron oxide on its surface."
+    },
+    {
+      "id": 3,
+      "question": "Who wrote the novel '1984'?",
+      "options": ["Aldous Huxley", "Ray Bradbury", "George Orwell", "Kurt Vonnegut"],
+      "correct": 2,
+      "explanation": "George Orwell wrote '1984', a dystopian novel published in 1949."
+    },
+    {
+      "id": 4,
+      "question": "What is the largest mammal in the world?",
+      "options": ["African Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
+      "correct": 1,
+      "explanation": "The Blue Whale is the largest mammal and the largest animal ever known to have lived on Earth."
+    },
+    {
+      "id": 5,
+      "question": "In which year did World War II end?",
+      "options": ["1944", "1945", "1946", "1947"],
+      "correct": 1,
+      "explanation": "World War II ended in 1945 with the surrender of Japan in September."
+    },
+    {
+      "id": 6,
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Go", "Gd", "Au", "Ag"],
+      "correct": 2,
+      "explanation": "Au is the chemical symbol for gold, derived from the Latin word 'aurum'."
+    },
+    {
+      "id": 7,
+      "question": "Which ocean is the largest?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "correct": 3,
+      "explanation": "The Pacific Ocean is the largest and deepest ocean basin on Earth."
+    },
+    {
+      "id": 8,
+      "question": "Who painted the Mona Lisa?",
+      "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+      "correct": 2,
+      "explanation": "Leonardo da Vinci painted the Mona Lisa between 1503 and 1519."
+    },
+    {
+      "id": 9,
+      "question": "What is the smallest prime number?",
+      "options": ["0", "1", "2", "3"],
+      "correct": 2,
+      "explanation": "2 is the smallest prime number and the only even prime number."
+    },
+    {
+      "id": 10,
+      "question": "Which gas makes up most of Earth's atmosphere?",
+      "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+      "correct": 2,
+      "explanation": "Nitrogen makes up about 78% of Earth's atmosphere."
+    },
+    {
+      "id": 11,
+      "question": "Who composed 'The Four Seasons'?",
+      "options": ["Johann Sebastian Bach", "Wolfgang Amadeus Mozart", "Antonio Vivaldi", "Ludwig van Beethoven"],
+      "correct": 2,
+      "explanation": "Antonio Vivaldi composed 'The Four Seasons', a set of four violin concertos."
+    },
+    {
+      "id": 12,
+      "question": "What is the hardest natural substance on Earth?",
+      "options": ["Gold", "Iron", "Diamond", "Quartz"],
+      "correct": 2,
+      "explanation": "Diamond is the hardest naturally occurring substance known."
+    },
+    {
+      "id": 13,
+      "question": "In Greek mythology, who is the king of the gods?",
+      "options": ["Apollo", "Zeus", "Poseidon", "Hades"],
+      "correct": 1,
+      "explanation": "Zeus is the king of the gods in Greek mythology, ruler of Mount Olympus."
+    },
+    {
+      "id": 14,
+      "question": "What is the speed of light in a vacuum?",
+      "options": ["299,792,458 m/s", "300,000,000 m/s", "186,000 miles/s", "All of the above"],
+      "correct": 0,
+      "explanation": "The exact speed of light in a vacuum is 299,792,458 meters per second."
+    },
+    {
+      "id": 15,
+      "question": "Which continent has the most countries?",
+      "options": ["Asia", "Europe", "Africa", "South America"],
+      "correct": 2,
+      "explanation": "Africa has 54 recognized sovereign states, more than any other continent."
+    }
+  ]
+}
